@@ -1,4 +1,5 @@
 const database = require('./database.js')
+const fs = require('fs')
 const util = require("util")
 const email = require("./sendMail")
 exports.getUserApply = async function (cid){
@@ -21,13 +22,15 @@ exports.createApply = async function (cid,name,mail,qq,job,ol_hour,eng,atc_exp,f
                 result('bad')
                 console.log(error)
             }else{
-                result(results)
-                const mail = {
+
+                const content = fs.readFileSync("./resources/ApplyNotifyAdmin.html",'utf-8')
+                const mailbody = {
                     title:"SKYline管制员中心-收到了一封新的管制员申请",
-                    body: "test",
-                    to:['1059946567@qq.com','3314076990@qq.com']
+                    body: util.format(content,name,mail,eng),
+                    to:['1059946567@qq.com']//,'3314076990@qq.com']
                 }
-                email.send(mail)
+                email.send(mailbody)
+                result(results)
             }
         })
     })

@@ -1,10 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title>SKYline管制员中心-收到了一封新的管制员申请</title>
 </head>
-<body>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        background-color: #F2F2F2;
+    }
 
+    h1, h2 {
+        margin: 0;
+    }
+
+    .hd {
+        background-color: #006494;
+        padding: 20px;
+        text-align: center;
+        color: #ffffff;
+    }
+
+    .content {
+        padding: 20px;
+        background-color: #ffffff;
+        text-align: left;
+        color: #4F4F4F;
+        border-radius: 8px;
+        box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.23);
+    }
+
+    span {
+        color: #006494;
+        font-weight: bold;
+        margin-right: 5px;
+    }
+</style>
+<body>
+<div class="hd">
+    <h1>SKYline管制员中心</h1>
+</div>
+<div class="content">
+    <h2>收到了一封新的管制员申请</h2>
+    <p><span>姓名:</span> %s </p>
+    <p><span>邮箱:</span> %s </p>
+    <p><span>英语水平:</span> %s </p>
+    <p>请尽快审核申请人的资料。</p>
+</div>
 </body>
 </html>
